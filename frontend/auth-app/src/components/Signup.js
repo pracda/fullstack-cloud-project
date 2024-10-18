@@ -10,6 +10,7 @@ const Signup = ({ toggleView }) => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [message, setMessage] = useState('');
     const [isUploading, setIsUploading] = useState(false);
+    const [baseUrl, setBaseUrl] = useState('baseUrl');
 
     const handleFileChange = (e) => {
         setFile(e.target.files[0]);
@@ -45,7 +46,7 @@ const Signup = ({ toggleView }) => {
             const contentType = file.type;
 
             const response = await axios.post(
-                'https://ile22zxjkc.execute-api.us-east-1.amazonaws.com/prod/signup',
+                `${baseUrl}/signup`,
                 { filename: uniqueFilename, contentType, email, name, password }
             );
 

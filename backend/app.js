@@ -3,10 +3,10 @@ import { DynamoDBClient, PutItemCommand, GetItemCommand, UpdateItemCommand } fro
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import crypto from "crypto"; // Import crypto module
 
-const s3 = new S3Client({ region: "region" });
-const dynamoDB = new DynamoDBClient({ region: "region" });
-
-const DYNAMODB_TABLE_NAME = "table-name";
+const s3 = new S3Client({ region: "us-east-1" });
+const dynamoDB = new DynamoDBClient({ region: "us-east-1" });
+const bucketName = "bucket-backend-s3";
+const DYNAMODB_TABLE_NAME = "Users";
 
 // Function to hash the password
 const hashPassword = (password) => {
@@ -89,7 +89,6 @@ export const handler = async (event) => {
 const signUp = async (event) => {
     const { filename, contentType, email, name, password } = JSON.parse(event.body);
     console.log(filename, contentType, email, name, password);
-    const bucketName = "bucket-name";
 
     // Generate pre-signed URL for image upload
     const uploadParams = {
@@ -216,8 +215,6 @@ const hashPasswordWithSalt = (password, salt) => {
 
 const updateProfileImage = async (event) => {
     const { email, oldImageKey, newFilename, newContentType } = JSON.parse(event.body);
-    const bucketName = "k-storage-images";
-
     // Delete the old image from S3
     const deleteParams = {
         Bucket: bucketName,
