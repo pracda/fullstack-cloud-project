@@ -8,8 +8,8 @@ const Profile = () => {
     const [newImage, setNewImage] = useState(null);
     const [uploading, setUploading] = useState(false);
     const [message, setMessage] = useState('');
-    const [bucket_name, setBucketName] = useState("bucket-name"); //code-change
-    const [baseUrl, setBaseUrl] = useState('baseUrl');
+    const bucket_name = process.env.REACT_APP_BUCKET_URL
+    const baseUrl = process.env.REACT_APP_BASE_API;
 
     useEffect(() => {
         const token = localStorage.getItem('authToken');

@@ -3,10 +3,10 @@ import { DynamoDBClient, PutItemCommand, GetItemCommand, UpdateItemCommand } fro
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import crypto from "crypto"; // Import crypto module
 
-const s3 = new S3Client({ region: "us-east-1" });
-const dynamoDB = new DynamoDBClient({ region: "us-east-1" });
-const bucketName = "bucket-backend-s3";
-const DYNAMODB_TABLE_NAME = "Users";
+const s3 = new S3Client({ region: process.env.region });
+const dynamoDB = new DynamoDBClient({ region: process.env.region });
+const bucketName = process.env.bucket_name;
+const DYNAMODB_TABLE_NAME = process.env.table_name;
 
 // Function to hash the password
 const hashPassword = (password) => {
