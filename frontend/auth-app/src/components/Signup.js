@@ -120,7 +120,7 @@ const Signup = () => {
             />
             <input
                 type="password"
-                placeholder="Confirm your password"
+                placeholder="Confirm your password again"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
