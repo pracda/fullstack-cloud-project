@@ -136,7 +136,7 @@ const Signup = () => {
                 {isUploading ? 'Uploading...' : 'Sign Up and Upload'}
             </button>
             {message && <p className="message">{message}</p>}
-            <p>Already have an account? <button type="button" onClick={() => navigate('/login')}>Login again and again</button></p>
+            <p>Already have an account? <button type="button" onClick={() => navigate('/login')}>Login</button></p>
         </form>
 
     );
