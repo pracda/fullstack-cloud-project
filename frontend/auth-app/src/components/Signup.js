@@ -97,6 +97,7 @@ const Signup = () => {
 
     return (
         <form onSubmit={handleUpload} className="form-container">
+            <h2>Sign Up</h2>
             <input
                 type="email"
                 placeholder="Enter your email"
@@ -120,7 +121,7 @@ const Signup = () => {
             />
             <input
                 type="password"
-                placeholder="Confirm your password again"
+                placeholder="Confirm your password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
@@ -134,9 +135,10 @@ const Signup = () => {
             <button type="submit" disabled={isUploading}>
                 {isUploading ? 'Uploading...' : 'Sign Up and Upload'}
             </button>
-            {message && <p>{message}</p>}
+            {message && <p className="message">{message}</p>}
             <p>Already have an account? <button type="button" onClick={() => navigate('/login')}>Login</button></p>
         </form>
+
     );
 };
 

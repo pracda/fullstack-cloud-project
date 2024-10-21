@@ -1,75 +1,121 @@
+/* General Styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: 'Roboto', sans-serif;
+  background-color: #1c1c1c; /* Fallback background color */
+  background-image: url('../public/backgroundDefault.jpg'); /* Placeholder for background image */
+  background-size: cover;
+  background-position: center;
+  color: #e0e0e0;
   margin: 0;
   padding: 20px;
 }
 
+/* Main App Container */
 .App {
   max-width: 400px;
   margin: auto;
-  background: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: rgba(42, 42, 42, 0.85); /* Slightly transparent background for better readability */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
-h1 {
+/* Headings */
+h1, h2, h3 {
+  color: #00d4d4; /* Turquoise accent for headings */
   text-align: center;
+  font-family: 'Poppins', sans-serif;
 }
 
+/* Form Styles */
 .form-container {
   display: flex;
   flex-direction: column;
 }
 
-input {
-  margin: 10px 0;
-  padding: 10px;
-  border: 1px solid #ccc;
+input, button {
+  margin: 15px 0;
+  padding: 12px;
+  border: 1px solid #444;
   border-radius: 5px;
+  background-color: #333; /* Dark background for input fields */
+  color: #e0e0e0;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
+/* Placeholder Text */
+input::placeholder {
+  color: #999; /* Lighter grey placeholder text */
+}
+
+/* Buttons */
 button {
-  padding: 10px;
-  background-color: #28a745;
+  background-color: #00d4d4; /* Turquoise accent for buttons */
+  color: #1c1c1c; /* Blackish text for contrast */
   border: none;
-  color: white;
-  border-radius: 5px;
   cursor: pointer;
-  margin-right: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+/* Button Hover Effect */
+button:hover {
+  background-color: #009999; /* Slightly darker turquoise on hover */
+  transform: translateY(-2px);
+}
+
+/* Disabled Button */
 button:disabled {
-  background-color: #ccc;
+  background-color: #555;
+  cursor: not-allowed;
 }
 
-.user-info {
-  margin-bottom: 20px;
+/* Consistent Button Styles */
+button[type="button"], a {
+  color: #00d4d4;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
 }
 
-.profile-image {
-  max-width: 100%;
-  border-radius: 50%;
+button[type="button"]:hover, a:hover {
+  color: #009999;
 }
 
+/* Error Messages */
 .error {
-  color: red;
+  color: #ff4c4c;
+  text-align: center;
 }
 
-.image-preview {
-  margin-top: 20px;
+/* Image Preview */
+.image-preview img {
+  max-width: 150px;
+  border-radius: 50%;
+  border: 3px solid #00d4d4; /* Accent border for profile image */
+}
+
+/* Profile Container */
+.profile-container {
   text-align: center;
 }
 
 .profile-image {
+  margin-top: 20px;
   max-width: 150px;
-  height: 120px !important;
-  /* Set a specific width for the image preview */
-  height: auto;
-  /* Maintain aspect ratio */
   border-radius: 50%;
-  /* Make it circular */
-  border: 2px solid #28a745;
-  /* Optional: Add a border */
+}
+
+/* Messaging Styles */
+.message {
+  color: #00d4d4;
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* Link Style */
+a, button[type="button"] {
+  display: inline-block;
+  background: none;
+  border: none;
+  padding: 0;
 }

@@ -93,14 +93,13 @@ const Profile = () => {
 
     return (
         <div className="profile-container">
-            <h2>User Profile</h2>
+            <h2>Your Profile</h2>
             {error && <p className="error">{error}</p>}
             {user && (
                 <div className="user-info">
                     <p>Email: {user.email}</p>
-                    <p>Created Date: {user.timestamp}</p>
+                    <p>Member Since: {user.timestamp}</p>
                     <div className="image-preview">
-                        <h3>Profile Image:</h3>
                         <img src={image} alt="Profile" className="profile-image" />
                     </div>
                 </div>
@@ -109,9 +108,10 @@ const Profile = () => {
             <button onClick={uploadImage} disabled={uploading}>
                 {uploading ? 'Uploading...' : 'Update Profile Image'}
             </button>
-            {message && <p>{message}</p>}
+            {message && <p className="message">{message}</p>}
             <button onClick={handleLogout}>Logout</button>
         </div>
+
     );
 };
 
