@@ -13,7 +13,8 @@ phases:
   post_build:
     commands:
       - echo "Copying build files to S3..."
-      - aws s3 sync frontend/auth-app/build/ s3://prasiddha-bucket-frontend-file-storage --delete
+      - cd frontend/auth-app
+      - aws s3 sync build/ s3://prasiddha-bucket-frontend-file-storage --delete
       - echo "Invalidating CloudFront cache..."
       - aws cloudfront create-invalidation --distribution-id E11NAE9Z9R46Z3 --paths "/*"
 
