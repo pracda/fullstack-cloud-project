@@ -23,6 +23,8 @@ const Profile = () => {
             const email = decoded[0];
             const timestamp = decoded[1];
 
+            const dateOnly = new Date(timestamp).toLocaleDateString();
+
             setUser({ email, timestamp });
             setImage(localStorage.getItem('profileImageUrl')); // Get profile image URL from localStorage
         } catch (err) {
@@ -98,7 +100,7 @@ const Profile = () => {
             {user && (
                 <div className="user-info">
                     <p>Email: {user.email}</p>
-                    <p>Member Since: {user.timestamp}</p>
+                    <p>Member Since: {user.dateOnly}</p>
                     <div className="image-preview">
                         <img src={image} alt="Profile" className="profile-image" />
                     </div>
