@@ -89,9 +89,11 @@ button[type="button"]:hover, a:hover {
 
 /* Image Preview */
 .image-preview img {
-  max-width: 150px;
-  border-radius: 50%;
+  width: 150px; /* Set fixed width */
+  height: 150px; /* Set fixed height to make it a square */
+  border-radius: 50%; /* Makes the image circular */
   border: 3px solid #00d4d4; /* Accent border for profile image */
+  object-fit: cover; /* Ensures the image fills the circular frame */
 }
 
 /* Profile Container */
@@ -101,8 +103,10 @@ button[type="button"]:hover, a:hover {
 
 .profile-image {
   margin-top: 20px;
-  max-width: 150px;
-  border-radius: 50%;
+  width: 150px; /* Set fixed width */
+  height: 150px; /* Set fixed height to match width */
+  border-radius: 50%; /* Ensures the circular shape */
+  object-fit: cover; /* Maintains aspect ratio within the circular frame */
 }
 
 /* Messaging Styles */
@@ -118,4 +122,8 @@ a, button[type="button"] {
   background: none;
   border: none;
   padding: 0;
+}
+
+.user-info{
+  font-family: 'Poppins', sans-serif;
 }

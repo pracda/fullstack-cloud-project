@@ -23,10 +23,7 @@ const Profile = () => {
             const email = decoded[0];
             const timestamp = decoded[1];
 
-            const dateObject = new Date(Number(timestamp)); // Try parsing it as a number (milliseconds since epoch)
-        const dateOnly = dateObject.toLocaleDateString(); 
-
-            setUser({ email, timestamp: dateOnly });
+            setUser({ email, timestamp});
             setImage(localStorage.getItem('profileImageUrl')); // Get profile image URL from localStorage
         } catch (err) {
             setError('Error decoding token: ' + err.message);
