@@ -22,7 +22,8 @@ Profile Image Updates (auto-replaces old S3 image, updates DynamoDB).
 **Infrastructure**: Fully automated via AWS CloudFormation.
 
 # 🏗 Architecture
-AWS Architecture Diagram (Replace with actual diagram)
+![deepseek_mermaid_20250423_9fd2fd](https://github.com/user-attachments/assets/02b0e9f3-412d-482c-b18b-e4cc57e80b8b)
+
 
 # AWS Services Used
 Service	Purpose
