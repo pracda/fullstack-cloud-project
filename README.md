@@ -3,13 +3,13 @@ Serverless React App with AWS Lambda, API Gateway, DynamoDB & S3
 AWS Node.js React DynamoDB
 
 # 📜 Table of Contents
-Project Overview
-Architecture
-Prerequisites
-Repository Structure
-Setup & Deployment
-Usage
-Troubleshooting
+Project Overview\
+Architecture\
+Prerequisites\
+Repository Structure\
+Setup & Deployment\
+Usage\
+Troubleshooting\
 
 # 🚀 Project Overview
 A serverless full-stack application enabling:
